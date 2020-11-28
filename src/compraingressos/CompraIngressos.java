@@ -23,6 +23,14 @@ public class CompraIngressos {
         exibirPlano.addItem(IngressoComum);
         exibirPlano.addItem(planoComum);
         exibirPlano.imprimePlano();
+        
+        Ingresso socioComum = new IngressoFisico();
+        Ingresso socioOuro = new IngressoOnline();
+        Ingresso socioPremium = new IngressoCartao();
+        socioOuro.setProximo(socioComum);       
+        socioPremium.setProximo(socioOuro);             
+        
+        Boolean libera = socioOuro.liberaEmCadeia();
     }
     
 }
